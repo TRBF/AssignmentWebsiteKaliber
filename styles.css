@@ -5,7 +5,7 @@
   
 
 body{
-    background-color: #FFFFFF;
+    background-color: rgba(248, 254, 250, 1);
 }
 *, html, body {
     margin: 0;
@@ -23,92 +23,139 @@ header{
     align-items: center;
     position: relative;
     top:0;
-    margin-bottom: 1%;
+    background-color: rgba(248, 254, 250, 1);
+    margin:0 auto 100px auto;
+    position:sticky;
+    z-index: 4;
+}
+.container  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    margin: 0 auto 0 auto;
 }
 header > nav{
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: nowrap;
     align-items: center;
     height: 100%;
+    width:100%;
 }
-header > nav > ul{
+nav > image {
+    width:100px;
+    height:auto;
+}
+.navbar-nav {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: center;
+    width:50%;
 }
-header > nav > ul > li{ 
+.nav-item{ 
+    text-decoration: none;
     white-space: nowrap;
     display: block;
-    margin: 0 10% 0 10%;
     font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 0px;
-    text-decoration: underline 1px white;
-    text-underline-offset: 7px;
-    transition: margin-bottom 0.5s, font-size 0.5s, text-decoration 0.5s, text-underline-offset 0.8s;
-    
+    margin: 0 5% 0 5%;
 }
-header > nav > ul > li:hover{
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    text-decoration: underline 4px #FBC1FF;
-    text-underline-offset: 5px;
+.nav-link {
+    position:relative;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+.nav-link::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top:25px;
+    right: -1px;
+    height: 5px;
+    width:100%;
+    transform: rotate(-1.5deg);
+}
+.nav-link.active::after{
+    background-color: #FBC1FF;
+}
+.nav-link:hover::after {
+    background-color: black;
+}
+#header_buttons{
+    width: 28%;
+    height: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right:40px;
+    flex-direction: row;
+    justify-content: space-between;
 }
  
 header > img{
     margin: auto 0 auto 10%;
 }
 .job_btn{
-    background-color: transparent;
+    background-color: white;
     border: 3px solid black;
-    width: 161px;
-    height: 60px;
-    font-size: 18px;
-    font-weight: bold;
-}
-.job_btn:first{
-    margin:0 15px 0 0;
-}
-.job_btn:hover{
-    background-color: rgba(0, 0, 0, 0.1);
-    cursor:pointer;
+    padding: 20px 50px 20px 50px;
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: 600;
+    transition:filter 0.3s;
 }
 .talent_btn{
     background-color: #FAE82E;
-    color:black;
-    width: 161px;
-    height: 60px;
-    font-size: 18px;
-    font-weight: bold;
+    padding: 23px 53px 23px 53px;
+    font-size: 15px;
+    white-space: nowrap;
+    font-weight: 600;
+    transition:filter 0.3s;
 }
 .talent_btn:hover{
-    background-color: #FAE82E;
     cursor:pointer;
+    filter: drop-shadow(-5px -5px 0px #FBC1FF);
 }
-#header_buttons{
-    width: 25%;
-    height: 70%;
-    margin-right:100px;
+.job_btn:hover{
+    cursor:pointer;
+    filter: drop-shadow(-5px -5px 0px #FBC1FF);
+}
+.point{
+    height:24px;
+    width:24px;
+    background-color: #FBC1FF;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.flex-1{
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
+    width:50%;
+    margin-left: calc(50% - 124px);  
+    margin-right: 0px;
 }
-#header_buttons > button{
-    width: 35%;
-    height: 90%;
-    font-size: 1.1rem;
-    margin-right:40px;
-    font-weight: bold;
+.reverse{
+    flex-direction: row-reverse;
+    margin-left: 0;
+    margin-right: calc(50% - 124px);  
+    text-align: right;
 }
+.flex-v{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
+}
 #section_1{
-    width:90%;
+    width:100%;
     height: 40vw;
     display: flex;
     justify-content: space-evenly;
-    margin:0 0 0 10%;
+    margin:0 0 0 15%;
 
 }
 
@@ -117,8 +164,11 @@ header > img{
 }
 
 h1{
+    position:relative;
     white-space: nowrap;
-    font-size: 6rem;
+    font-size: 4rem;
+    line-height: 140%;
+    font-weight: 600;
 }
   
 
@@ -139,14 +189,21 @@ h1{
     width:100%;
     padding-left: 30%;
 }
+#top-button-section p{
+    margin-bottom: 10px;
+    font-size: 20px;
+}
 
 #section_2{
+    position:relative;
     display: flex;
     width: auto;
-    margin: 50px 10% 0 5%;
+    width:100%;
+    margin: 50px 0 100px 0;
     height:400px;
     justify-content: space-between;
     align-content: center;
+    
 }
 #left1{
     height: 100%;
@@ -167,14 +224,14 @@ h1{
 #section_3{
     height:500px;
     display: flex;
-    width:85%;
-    margin: 50px 15% 0 5%;
+    width:100%;
+    margin: 50px 0 100px 0;
     justify-content: space-between;
     align-content: center;
 }
 #section_3 img{
     width:auto;
-    height: 80%;
+    height: 60%;
 }
 #right2{
     height: 100%;
@@ -202,34 +259,22 @@ h1{
 #arrow_1{
     z-index:-1;
     position: absolute;
-    top:620px;
-    left:16%;
+    height:auto;
+    width: 100px;
+    top:550px;
+    left:22%;
 }
-/* #particle_top_left{
-    position: relative;
-    z-index: -1;
-    left:8%;
-    top:140px;
-}
-#particle_bottom_right{
-    position: relative;
-    z-index: -1;
-    left:530px;
-    top:270px;
-    transform: rotate(-180deg);
-} */
 .rndh{
     font-size: 40px;
     font-weight: bold;
-    margin-left: 5%;
+    margin-left: 15%;
     margin-bottom: 100px;
 }
 #section_4{
     height: 800px;
-    width: 85%;
+    width:100%;
     display: flex;
     justify-content: space-between;
-    margin:0 10% 0 5%;
 }
 #left_3{
     height:100%;
@@ -247,7 +292,7 @@ h1{
     height: 80%;
 }
 .yellow_bar{
-    width:100%;
+    width:80%;
     height:70px;
     background-color: #FAE82E;
     display: flex;
@@ -261,12 +306,13 @@ h1{
 }
 .yellow_bar p{
     font-weight: bold;
-    font-size: 22px;
+    font-size: 20px;
 }
 .grayify{
     background-color: #f8fcda;
 }
 #section_5{
+    width:100%;
     height:700px;  
     background-image: linear-gradient(rgba(255,255,255, 1), rgba(255,255,255,0.8),rgba(255,255,255,1)), url("./images/why-us-bg.jpg");
 }
@@ -330,8 +376,8 @@ h1{
     display: flex;
     justify-content: space-between;
     height:600px;
-    width:80%;
-    margin: 150px 10% 0 10%;
+    width:100%;
+    margin: 150px 0 0 0;
     padding: 10px;
     position:relative;
 }
@@ -396,15 +442,14 @@ h1{
     margin-top: 60px;
 }
 #section_7{
-    background-color: white;
     z-index: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
     height:800px;
-    width:80%;
-    margin:100px 10% 100px 10%;
+    width:100%;
+    margin:100px 0 100px 0;
 }
 #left5{
     width:30%;
@@ -479,7 +524,6 @@ footer{
 }
 #top_footer{
     height:70px;
-    background-color: white;
     width: 100%;
 }
 #bottom_footer{
@@ -513,16 +557,14 @@ footer{
     margin-bottom: 0px;  
 }
 .sparkle{
-    position: relative;
-    background-color: #FAE82E;
-    display: inline-block;
-    transform: rotate(-1deg);
-}
-.sparkle::before{
-    z-index: -1;
     position: absolute;
-    content: "";
-    background-image: url("./images/particle_1.png");
+    background-color: #FAE82E;
+    height:85px;
+    width:350px;
+    left:-22px;
+    z-index: -1;
+    display: inline-block;
+    transform: rotate(-2deg);
 }
 .underline{
     position: relative;
@@ -541,6 +583,9 @@ footer{
 .particle-wrapper{
     width:fit-content;
     height: fit-content;
+    position: relative;
+}
+.relative{
     position: relative;
 }
 .sparkle-tr{
@@ -577,25 +622,26 @@ footer{
     background: url("./images/particle_1.png");
     color:#FAE82E
 }
-
-@media only screen and (max-width: 1600px) {
-    h1{
-        font-size: 5rem;
-    }
-    .job_btn{
-        font-size: 18px;
-    }
-    .talentx_btn{
-        font-size: 18px;
-    }
-    header{
-        margin-bottom: 30px;
-    }
+.sparkle-br-startups{
+    z-index: 3;
+    position:absolute;
+    height:50px;
+    width:30px;
+    left: 340px;
+    bottom:-40px;
+    transform:rotate(180deg);
+    background: url("./images/particle_1.png");
+    color:#FAE82E
 }
-@media only screen and (max-width:1400px){
-    h1{
-        font-size: 3rem;
-    }
+.sparkle-tl-startups{
+    z-index: 3;
+    position:absolute;
+    height:50px;
+    width:30px;
+    left: -60px;
+    top:50px;
+    background: url("./images/particle_1.png");
+    color:#FAE82E
 }
 .launch-wrapper{
         height:fit-content;
@@ -620,4 +666,14 @@ form{
 }
 .modifier-br{
     bottom:55px;
+}
+#background-stripe1{
+    z-index: -1;
+    height:450px;
+    width:3000px;
+    left:-400px;
+    top:0px;
+    transform: rotate(3deg);
+    position:absolute;
+    background-color: white;
 }
